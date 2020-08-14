@@ -13,9 +13,10 @@ export default class LineIndicator extends React.Component {
   render() {
     return (
       <Row>
-        {[...this.props.grid.columnsIterator()].map(column => (
-          (<Indicator data={this.props.grid.getGroupIndications(column)} width={100 / (this.props.grid.width + 1)}  />)
+        {[...this.props.grid.columnsIterator()].map((column, index) => (
+          (<Indicator data={this.props.grid.getGroupIndications(column)} key={`indicator-column-${index}`} />)
         ))}
+        <div className="col abstract-cell"/>
       </Row>
     );
   }

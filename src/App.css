@@ -6,6 +6,8 @@
 .indication {
   background-color: green;
   height: 10em;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .indication-top {
