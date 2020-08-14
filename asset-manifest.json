@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/voltorb-flip-react/static/css/main.ef36e8ae.chunk.css",
+    "main.js": "/voltorb-flip-react/static/js/main.b8c1b739.chunk.js",
+    "main.js.map": "/voltorb-flip-react/static/js/main.b8c1b739.chunk.js.map",
+    "runtime-main.js": "/voltorb-flip-react/static/js/runtime-main.1e9763ae.js",
+    "runtime-main.js.map": "/voltorb-flip-react/static/js/runtime-main.1e9763ae.js.map",
+    "static/css/2.11829350.chunk.css": "/voltorb-flip-react/static/css/2.11829350.chunk.css",
+    "static/js/2.6e1df67b.chunk.js": "/voltorb-flip-react/static/js/2.6e1df67b.chunk.js",
+    "static/js/2.6e1df67b.chunk.js.map": "/voltorb-flip-react/static/js/2.6e1df67b.chunk.js.map",
+    "index.html": "/voltorb-flip-react/index.html",
+    "precache-manifest.065d4ee5635a916955b67d9070fa24bb.js": "/voltorb-flip-react/precache-manifest.065d4ee5635a916955b67d9070fa24bb.js",
+    "service-worker.js": "/voltorb-flip-react/service-worker.js",
+    "static/css/2.11829350.chunk.css.map": "/voltorb-flip-react/static/css/2.11829350.chunk.css.map",
+    "static/css/main.ef36e8ae.chunk.css.map": "/voltorb-flip-react/static/css/main.ef36e8ae.chunk.css.map",
+    "static/js/2.6e1df67b.chunk.js.LICENSE.txt": "/voltorb-flip-react/static/js/2.6e1df67b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1e9763ae.js",
+    "static/css/2.11829350.chunk.css",
+    "static/js/2.6e1df67b.chunk.js",
+    "static/css/main.ef36e8ae.chunk.css",
+    "static/js/main.b8c1b739.chunk.js"
+  ]
+}
