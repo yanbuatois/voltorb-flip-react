@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import VoltorbFlip from '@dracoctix/voltorb-flip';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@forevolve/bootstrap-dark/dist/css/bootstrap-dark.min.css';
 
 const tempLevel = localStorage.getItem('level');
 const startingLevel = (tempLevel && Number.isSafeInteger(+tempLevel) && +tempLevel <= 8 && +tempLevel > 0) ? +tempLevel : 1;

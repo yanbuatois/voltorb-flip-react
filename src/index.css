@@ -16,7 +16,8 @@ code {
 }
 
 .cell:not(.cell-memo-mode) {
-  background-color: blue;
+  background-color: gray;
+  color: white;
 }
 
 .cell-covered {
@@ -27,16 +28,17 @@ code {
   /*background-color: green;*/
   height: 5em;
   vertical-align: middle;
+  color: black;
 }
 
 .indication-top {
   height: 50%;
-  background-color: green;
+  background-color: limegreen;
 }
 
 .indication-bottom {
   height: 50%;
-  background-color: red;
+  background-color: orangered;
 }
 
 .abstract-cell {

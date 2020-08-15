@@ -43,6 +43,9 @@ export default class Game extends Component {
   }
 
   endedGrid() {
+    localStorage.setItem('score', (this.props.game.score + this.props.game.grid.score));
+    localStorage.setItem('level', this.props.game.nextLevel);
+
     this.forceUpdate();
     this.setState({
       memoMode: false,
@@ -59,9 +62,6 @@ export default class Game extends Component {
     this.setState({
       grid: this.state.game.gotoNextLevel(),
     });
-
-    localStorage.setItem('score', this.props.game.score);
-    localStorage.setItem('level', this.props.game.level);
   }
 
   memoToggled() {
@@ -75,6 +75,7 @@ export default class Game extends Component {
   }
 
   memoCellSelected(cell) {
+    console.log(cell);
     this.setState({
       selectedCellForMemo: cell,
     });
@@ -87,7 +88,7 @@ export default class Game extends Component {
       <Grid grid={this.state.grid} memoMode={this.state.memoMode} onMemoSelected={this.memoCellSelected.bind(this)} cellForMemo={this.state.selectedCellForMemo} onCellClick={this.cellClicked.bind(this)}/>
       <ScoreRow game={this.state.game} />
       <ControlRow game={this.state.game} onStop={this.gridStopped.bind(this)} onGridChange={this.changeGrid.bind(this)} />
-      <MemoRow selectedCellForMemo={this.state.selectedCellForMemo} game={this.state.game} onMemoValue={this.memoValue.bind(this)} onMemoToggle={this.memoToggled.bind(this)} />
+      <MemoRow memoMode={this.state.memoMode} selectedCellForMemo={this.state.selectedCellForMemo} game={this.state.game} onMemoValue={this.memoValue.bind(this)} onMemoToggle={this.memoToggled.bind(this)} />
     </Container>
     );
   }

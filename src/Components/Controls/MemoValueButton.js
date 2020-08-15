@@ -22,7 +22,6 @@ export default class MemoValueButton extends React.Component {
   }
 
   render() {
-    console.log(this.props.cell?.memo.has(this.props.value));
     return (
       <Button color="primary" disabled={!this.props.enabled} onClick={this.buttonClicked.bind(this)} active={this.props.enabled && this.props.cell && this.props.cell.memo.has(this.props.value)}>{this.props.children}</Button>
     );

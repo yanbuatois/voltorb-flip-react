@@ -9,40 +9,30 @@ export default class MemoRow extends React.Component {
   static propTypes = {
     game: PropTypes.instanceOf(Game).isRequired,
     selectedCellForMemo: PropTypes.instanceOf(Cell),
+    memoMode: PropTypes.bool,
     onMemoToggle: PropTypes.func,
     onMemoValue: PropTypes.func,
   }
 
   static defaultProps = {
     selectedCellForMemo: null,
+    memoMode: false,
     onMemoToggle: () => {},
     onMemoValue: () => {},
   };
 
-  constructor(...props) {
-    super(...props);
-
-    this.state = {
-      memoEnabled: false,
-    };
-  }
-
   toggleMemo() {
-    const memoEnabled = !this.state.memoEnabled;
-    this.setState({
-      memoEnabled
-    });
-    this.props.onMemoToggle(memoEnabled);
+    this.props.onMemoToggle();
   }
 
   render() {
     return (
       <Row className="mt-3">
         <ButtonGroup className="col-10">
-          {_.times(this.props.game.maximalCoefficient + 1, (index) => (<MemoValueButton enabled={!!(this.props.game.grid.playing && this.state.memoEnabled && this.props.selectedCellForMemo)} value={index} cell={this.props.selectedCellForMemo} key={`memo-btn-${index}`} onMemoValue={this.props.onMemoValue}>{index === 0 ? '💣' : index}</MemoValueButton>))}
+          {_.times(this.props.game.maximalCoefficient + 1, (index) => (<MemoValueButton enabled={!!(this.props.game.grid.playing && this.props.memoMode && this.props.selectedCellForMemo)} value={index} cell={this.props.selectedCellForMemo} key={`memo-btn-${index}`} onMemoValue={this.props.onMemoValue}>{index === 0 ? '💣' : index}</MemoValueButton>))}
         </ButtonGroup>
         <ButtonGroup className="col-2">
-          <Button color="primary" disabled={!this.props.game.grid.playing} active={this.state.memoEnabled} onClick={this.toggleMemo.bind(this)}>
+          <Button color="primary" disabled={!this.props.game.grid.playing} active={this.props.memoMode} onClick={this.toggleMemo.bind(this)}>
             <span role="img" aria-label="Mémo">📝</span>
           </Button>
         </ButtonGroup>

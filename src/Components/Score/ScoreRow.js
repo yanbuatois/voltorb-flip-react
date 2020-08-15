@@ -8,11 +8,13 @@ export default class ScoreRow extends React.Component {
     game: PropTypes.instanceOf(Game).isRequired,
   };
 
+  numberFormat = new Intl.NumberFormat();
+
   render() {
     return (
       <Row className={"score-row"}>
-        <Col className="text-center">Score for the game: <strong>{this.props.game.score} pts</strong></Col>
-        <Col className="text-center">Score for the grid: <strong>{this.props.game.grid.score} pts</strong></Col>
+        <Col className="text-center">Score for the game: <strong>{this.numberFormat.format(this.props.game.score)} points</strong></Col>
+        <Col className="text-center">Score for the grid: <strong>{this.numberFormat.format(this.props.game.grid.score)} points</strong></Col>
       </Row>
     )
   }
