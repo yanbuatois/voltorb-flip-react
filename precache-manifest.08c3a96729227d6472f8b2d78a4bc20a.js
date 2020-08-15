@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9c305871100a7de5b86629aa4df7b910",
+    "revision": "19bb62bf9c3f7634e3b25c3bd6aaa826",
     "url": "/voltorb-flip-react/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/voltorb-flip-react/static/css/2.9083ef58.chunk.css"
   },
   {
-    "revision": "e3ae3cd986b094612708",
-    "url": "/voltorb-flip-react/static/css/main.3281d159.chunk.css"
+    "revision": "4b102664c13c7254e6ee",
+    "url": "/voltorb-flip-react/static/css/main.2da2280c.chunk.css"
   },
   {
     "revision": "3d62f63438aab48d29a4",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/voltorb-flip-react/static/js/2.c91f2b78.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e3ae3cd986b094612708",
+    "revision": "4b102664c13c7254e6ee",
     "url": "/voltorb-flip-react/static/js/main.faa272a4.chunk.js"
   },
   {
