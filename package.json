@@ -5,6 +5,7 @@
   "homepage": "https://yanbuatois.github.io/voltorb-flip-react",
   "dependencies": {
     "@babel/core": "7.9.0",
+    "@forevolve/bootstrap-dark": "^1.0.0-alpha.1091",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
