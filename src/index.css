@@ -12,8 +12,11 @@ code {
 }
 
 .cell {
-  background-color: blue;
   height: 5em;
+}
+
+.cell:not(.cell-memo-mode) {
+  background-color: blue;
 }
 
 .cell-covered {
@@ -48,4 +51,25 @@ code {
 
 .score-row {
   font-size: 1.5rem;
+}
+
+.cell-memo-mode {
+  background-color: blueviolet;
+}
+
+.cell-memo-selected {
+  background-color: purple !important;
+}
+
+.cell-memo-data {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 35%;
+  min-width: 35%;
+  background-color: black;
+  /*height: 10%;*/
+  z-index: 9;
+  color: white;
+  font-weight: bold;
 }
