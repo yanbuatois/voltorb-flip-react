@@ -65,7 +65,7 @@ code {
   position: absolute;
   bottom: 0;
   right: 0;
-  opacity: 35%;
+  opacity: 0.35;
   min-width: 35%;
   background-color: black;
   /*height: 10%;*/
