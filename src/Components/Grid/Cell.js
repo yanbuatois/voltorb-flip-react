@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Cell as CellLogic } from '@dracoctix/voltorb-flip';
-import { Row } from 'reactstrap';
 
 export default class Cell extends React.Component {
   static propTypes = {

@@ -47,7 +47,7 @@ export default class Game extends Component {
     this.setState({
       memoMode: false,
       selectedCellForMemo: null,
-    })
+    });
   }
 
   gridStopped() {
@@ -56,11 +56,12 @@ export default class Game extends Component {
   }
 
   changeGrid() {
-
     this.setState({
       grid: this.state.game.gotoNextLevel(),
     });
 
+    localStorage.setItem('score', this.props.game.score);
+    localStorage.setItem('level', this.props.game.level);
   }
 
   memoToggled() {
