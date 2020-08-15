@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/voltorb-flip-react/precache-manifest.08c3a96729227d6472f8b2d78a4bc20a.js"
+  "/voltorb-flip-react/precache-manifest.e6cd1a7da17914e1f75b1d55e0ad3145.js"
 );
 
 self.addEventListener('message', (event) => {
