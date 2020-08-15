@@ -56,11 +56,11 @@ code {
 }
 
 .cell-memo-mode {
-  background-color: blueviolet;
+  background-color: darkcyan;
 }
 
 .cell-memo-selected {
-  background-color: purple !important;
+  background-color: cadetblue !important;
 }
 
 .cell-memo-data {
