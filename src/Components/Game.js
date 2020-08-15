@@ -5,6 +5,7 @@ import { Container } from 'reactstrap';
 import Grid from './Grid/Grid.js';
 import ScoreRow from './Score/ScoreRow.js';
 import ControlRow from './Controls/ControlRow.js';
+import MemoRow from './Controls/MemoRow.js';
 import Title from './Title';
 
 export default class Game extends Component {
@@ -21,6 +22,8 @@ export default class Game extends Component {
     this.state = {
       grid: this.props.game.grid,
       game: this.props.game,
+      selectedCellForMemo: null,
+      memoMode: false,
     };
   }
 
@@ -35,13 +38,21 @@ export default class Game extends Component {
       game: this.props.game,
     });
     if (!this.state.grid.playing) {
-      this.forceUpdate();
+      this.endedGrid();
     }
+  }
+
+  endedGrid() {
+    this.forceUpdate();
+    this.setState({
+      memoMode: false,
+      selectedCellForMemo: null,
+    })
   }
 
   gridStopped() {
     this.state.game.grid.interrupt();
-    this.forceUpdate();
+    this.endedGrid();
   }
 
   changeGrid() {
@@ -52,13 +63,30 @@ export default class Game extends Component {
 
   }
 
+  memoToggled() {
+    const memoMode = !this.state.memoMode;
+    const selectedCellForMemo = this.state.memoMode ? this.state.selectedCellForMemo : null;
+    this.setState({memoMode, selectedCellForMemo});
+  }
+
+  memoValue() {
+    this.setState({ selectedCellForMemo: this.state.selectedCellForMemo });
+  }
+
+  memoCellSelected(cell) {
+    this.setState({
+      selectedCellForMemo: cell,
+    });
+  }
+
   render() {
     return (
     <Container>
       <Title game={this.state.game} />
-      <Grid grid={this.state.grid} onCellClick={this.cellClicked.bind(this)}/>
+      <Grid grid={this.state.grid} memoMode={this.state.memoMode} onMemoSelected={this.memoCellSelected.bind(this)} cellForMemo={this.state.selectedCellForMemo} onCellClick={this.cellClicked.bind(this)}/>
       <ScoreRow game={this.state.game} />
       <ControlRow game={this.state.game} onStop={this.gridStopped.bind(this)} onGridChange={this.changeGrid.bind(this)} />
+      <MemoRow selectedCellForMemo={this.state.selectedCellForMemo} game={this.state.game} onMemoValue={this.memoValue.bind(this)} onMemoToggle={this.memoToggled.bind(this)} />
     </Container>
     );
   }
